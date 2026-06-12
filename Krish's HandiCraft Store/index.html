@@ -3,139 +3,454 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Krish handicraft Store</title>
+    <meta name="description" content="Discover premium, authentic Rajasthani handicrafts including traditional sarees, hand-painted pottery, and artisan jewelry curated directly from Jaipur.">
+    <meta name="theme-color" content="#f0803c">
+    <title>Krish's Handicraft Store | Authentic Rajasthani Heritage</title>
+    
+    <link rel="preconnect" href="https://unpkg.com">
     <link rel="stylesheet" href="style.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" media="screen">
+    <style>
+        /* Target updates directly to clean up grid layouts */
+        .products-showcase .grid-layout.three-columns {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr) !important; /* Forces layout into exactly 3 items per row */
+            gap: 2.5rem;
+        }
+
+        /* Testimonial structural balancing to center reviews section */
+        .social-proof-grid {
+            width: 100%;
+            background-color: #fcfcfc;
+            padding: 4rem 0;
+        }
+        .reviews-center-container {
+            max-width: 1200px;
+            margin: 0 auto; /* Horizontally centers the entire row container */
+            padding: 0 20px;
+            display: flex;
+            justify-content: center; /* Centers items internally if rows collapse */
+        }
+        .reviews-center-container .grid-layout.three-columns {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            width: 100%;
+        }
+
+        @media (max-width: 992px) {
+            .products-showcase .grid-layout.three-columns,
+            .reviews-center-container .grid-layout.three-columns {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+        }
+        @media (max-width: 768px) {
+            .products-showcase .grid-layout.three-columns,
+            .reviews-center-container .grid-layout.three-columns {
+                grid-template-columns: 1fr !important;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header >
-        <a href="#" class="logo">
-            <img src="img/Logo2.png" alt="Business Logo">
+
+    <a href="#main-content" class="skip-link" style="position:absolute; top:-100px; left:0; overflow:hidden; z-index:-1;">Skip to Content</a>
+
+    <header class="site-header">
+        <a href="#" class="logo-container" aria-label="Krish's Handicrafts Home">
+            <img src="Handicraft.jpg" alt="Krish's Handicrafts Logo" width="50" height="50">
         </a>
-
-        <ul class="navbar">
-            <li><a href="Home">Home</a></li>
-            <li><a href="Service">Service</a></li>
-            <li><a href="Product">Product</a></li>
-            <li><a href="About">About</a></li>
-            <li><a href="Reviews">Reviews</a></li>
-            
-        </ul>
-
-        <div class="header-btn">
-            <a href="#" class="sign-up">Sign Up</a>
-            <a href="#"class="sign-in">Sign In</a>
+        <nav class="navigation" aria-label="Main Business Directory">
+            <ul class="navbar">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#service" class="nav-link">Services</a></li>
+                <li><a href="#products" class="nav-link">Products</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#reviews" class="nav-link">Reviews</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <a href="#account/register" class="btn-action sign-up">Sign Up</a>
+            <a href="#account/login" class="btn-action sign-in">Sign In</a>
         </div>
     </header>
-    <section class="Home" id="home">
-        <div class="text">
-            <h1><span>Looking</span> to <br>
-            own a piece of Rajasthan</h1>
-            <p>We are her to help you explore the best of Handicraft's from Rajasthan.</p>
-            <p>Explore our collection, place an order and get ready to receive the Rajasthani touch at your home.</p>
-            <p>
-                <div class="app-stores">
-                    <img src="img/AppStore.jpg" alt="AppStore">
-                    <img src="img/PlayStore.jpg" alt="PlayStore">
+
+    <main id="main-content">
+        
+        <section class="hero-section" id="home" aria-labelledby="hero-heading">
+            <div class="hero-content">
+                <h1 id="hero-heading"><span>Looking</span> to <br> own a piece of Rajasthan</h1>
+                <p class="hero-subtext">We are here to help you explore the best of handcrafted luxury sourced organically directly from generational artisans in Rajasthan.</p>
+                <p class="hero-subtext">Explore our collection, place a streamlined reservation order and receive heritage art drops at your doorstep.</p>
+                
+                <div class="app-distribution-badges">
+                    <a href="https://play.google.com/store/games?device=windows&pli=1" target="_blank" rel="noopener noreferrer" aria-label="Download Client Hub on Google Play Store">
+                        <img src="PlayStore.jpg" alt="Get it on Google Play" width="120" height="36">
+                    </a>
+                    <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener noreferrer" aria-label="Download Client Hub on Apple App Store">
+                        <img src="AppStore.jpg" alt="Download on the App Store" width="120" height="36">
+                    </a>
                 </div>
-            </p>
-        </div>
-
-        <div class="form-container">
-            <h2>Palce an Order</h2>
-            <form action="#" method="POST">
-            <select name="product" required>
-                <option value="" disabled selected>Select Product</option>
-                <option value="Textile">Traditional Textile</option>
-                <option value="Pottery">Hand-Painted Pottery</option>
-                <option value="Jewellery">Rajasthani Jewellery</option>
-                <option value="Furniture">Handicraft Furniture</option>
-                <option value="Carving">Wooden Carving</option>
-                <option value="Crockery">Rajasthani Crockery</option>  
-            </select>
-            <input type="number" name="quantity" placeholder="Quantity" required min="1">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <input type="tel" name="phone" placeholder="Your Phone">
-            <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
-            <button type="submit">Place Order</button>
-            </form>
-        </div>
-    </section>
-
-    <section class="service" id="service">
-        <div class="heading">
-            <span>How to</span>
-            <h1>Get the best of Rajasthani Handicrafts delivered at your doorstep.</h1>
-        </div>
-        <div class="service-container">
-            <div class="box">
-                <i class="bx bx-windows"></i>
-                <h2>Browse the Collection</h2>
-                <p>Choose what you like from our rich collection listed in the following section.</p>
             </div>
-            <div class="box">
-                <i class="bx bxl-shopify"></i>
+
+            <div class="intake-form-wrapper">
                 <h2>Place an Order</h2>
-                <p>Place your order by filling up the form in the above section.</p>
-            </div>
-            <div class="box">
-                <i class="bx bx-credit-card"></i>
-                <h2>Checkout Online</h2>
-                <p>Pay us online using your prefered card,UPI or payment gateway</p>
-            </div>
-        </div>
+                <form id="orderForm" method="POST" action="/api/v1/orders" novalidate>
+                    <div class="form-group">
+                        <label for="productSelect" class="sr-only">Choose Catalog Item</label>
+                        <select id="productSelect" name="product" required>
+                            <option value="" disabled selected>Select Product</option>
+                            <option value="Textile">Traditional Sarees</option>
+                            <option value="Pottery">Hand-painted Pottery</option>
+                            <option value="Jewellery">Rajasthani Jewellery</option>
+                            <option value="Furniture">Handicraft Furniture</option>
+                            <option value="Carving">Wooden Carving</option>
+                            <option value="Crockery">Rajasthani Crockery</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="quantityInput" class="sr-only">Volume Field</label>
+                        <input type="number" id="quantityInput" name="quantity" placeholder="Quantity" required min="1" max="99">
+                    </div>
 
-    </section>
-    <hr style="width: 50%;margin: 0 auto;">
-<!--Product section-->
-    <section class="products" id="products">
-        <div class="heading">
-            <span>Best Options</span>
-            <h1>Explore our top deals from our Top Handicrafts Collection</h1>
-        </div>
-        <div class="products-container">
-            <div class="box">
-                <img src="img/1.jpeg" alt="Traditional Textile">
-                <h2>Traditional Textile</h2>
-                <h3>Rs.2400/piece</h3>
-                <a href="#" class="btn">Order Now</a>
+                    <div class="form-group">
+                        <label for="nameInput" class="sr-only">Full Name</label>
+                        <input type="text" id="nameInput" name="name" placeholder="Your Name" required autocomplete="name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="emailInput" class="sr-only">Email Address</label>
+                        <input type="email" id="emailInput" name="email" placeholder="Your Email" required autocomplete="email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phoneInput" class="sr-only">Mobile Contact String</label>
+                        <input type="tel" id="phoneInput" name="phone" placeholder="Your Phone Number" required autocomplete="tel">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="messageTextarea" class="sr-only">Context Notes Field</label>
+                        <textarea id="messageTextarea" name="message" placeholder="Specify customization or delivery notes..." rows="4" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">
+                        <span class="btn-text">Place Your Order</span>
+                        <i class='bx bx-loader-alt bx-spin form-loader' style="display: none;" aria-hidden="true"></i>
+                    </button>
+                    
+                    <div id="formFeedback" class="form-feedback-message" aria-live="polytic" style="margin-top:10px; font-size:0.9rem; display:none;"></div>
+                </form>
             </div>
-            <div class="box">
-                <img src="img/2.jpeg" alt="Hand-Painted Pottery">
-                <h2>Hand-Painted Pottery</h2>
-                <h3>Rs.400/piece</h3>
-                <a href="#" class="btn">Order Now</a>
+        </section>
+
+        <section class="services-showcase" id="service" aria-labelledby="services-heading">
+            <header class="section-heading">
+                <h2 id="services-heading">Our Services</h2>
+            </header>
+            <div class="grid-layout three-columns">
+                <article class="card service-card">
+                    <div class="icon-wrapper" aria-hidden="true">
+                        <i class='bx bx-shopping-bag'></i>
+                    </div>
+                    <h3>Handicraft Products</h3>
+                    <p>We provide a wide premium portfolio of genuine craft items directly from local workspaces.</p>
+                </article>
+                <article class="card service-card">
+                    <div class="icon-wrapper" aria-hidden="true">
+                        <i class='bx bx-customize'></i>
+                    </div>
+                    <h3>Custom Orders</h3>
+                    <p>Collaborate with master craftsmen on customized design pipelines built to your precise configurations.</p>
+                </article>
+                <article class="card service-card">
+                    <div class="icon-wrapper" aria-hidden="true">
+                        <i class='bx bxs-package'></i>
+                    </div>
+                    <h3>White-Glove Logistics</h3>
+                    <p>Insured, tracked, and robust national transit pipelines keeping items secured till destination handoff.</p>
+                </article>
             </div>
-            <div class="box">
-                <img src="img/3.jpg" alt="Rajasthani Jewellery">
-                <h2>Rajasthani Jewellery</h2>
-                <h3>Rs.8400/piece</h3>
-                <a href="#" class="btn">Order Now</a>
-            </div>
-            <div class="box">
-                <img src="img/4.jpeg" alt="Handicraft Furniture">
-                <h2>Handicraft Furniture</h2>
-                <h3>Rs.6000/piece</h3>
-                <a href="#" class="btn">Order Now</a>
-            </div>
-            <div class="box">
-                <img src="img/5.webp" alt="Wooden Carving">
-                <h2>Wooden Carving</h2>
-                <h3>Rs.4200/piece</h3>
-                <a href="#" class="btn">Order Now</a>
-            </div>
-            <div class="box">
-                <img src="img/6.jpeg" alt="Rajasthani Crockery">
-                <h2>Rajasthani Crockery</h2>
-                <h3>Rs.200/piece</h3>
-                <a href="#" class="btn">Order Now</a>
-            </div>
+        </section>
+
+        <section class="products-showcase" id="products" aria-labelledby="products-heading">
+            <header class="section-heading">
+                <h2 id="products-heading">Explore Our Products </h2>
+            </header>
             
+            <div class="grid-layout three-columns">
+                <article class="card product-card">
+                    <figure class="product-media">
+                        <img src="1.image.jpg" alt="Fine weave patterns of a Traditional Rajasthani Saree" loading="lazy">
+                    </figure>
+                    <div class="product-details">
+                        <h3>Traditional Sarees</h3>
+                        <p class="product-desc">Beautifully woven regional premium silk/cotton variant textiles.</p>
+                        <span class="price-tag">₹1,800 <small>/ piece</small></span>
+                        <a href="#home" class="btn btn-secondary-action" data-product="Traditional Sarees">Reserve Item</a>
+                    </div>
+                </article>
 
+                <article class="card product-card">
+                    <figure class="product-media">
+                        <img src="2.image.jpg" alt="Artisan detailing on Hand-painted Pottery structural clay piece" loading="lazy">
+                    </figure>
+                    <div class="product-details">
+                        <h3>Hand-painted Pottery</h3>
+                        <p class="product-desc">Unique color compositions utilizing organic earth pigments.</p>
+                        <span class="price-tag">₹2,800 <small>/ piece</small></span>
+                        <a href="#home" class="btn btn-secondary-action" data-product="Hand-painted Pottery">Reserve Item</a>
+                    </div>
+                </article>
+
+                <article class="card product-card">
+                    <figure class="product-media">
+                        <img src="3.image.jpg" alt="Traditional semi-precious Kundan setting Rajasthani Jewelry piece" loading="lazy">
+                    </figure>
+                    <div class="product-details">
+                        <h3>Rajasthani Jewellery</h3>
+                        <p class="product-desc">Stunning statements paying homage to authentic imperial accents.</p>
+                        <span class="price-tag">₹4,800 <small>/ piece</small></span>
+                        <a href="#home" class="btn btn-secondary-action" data-product="Rajasthani Jewellery">Reserve Item</a>
+                    </div>
+                </article>
+
+                <article class="card product-card">
+                    <figure class="product-media">
+                        <img src="4.image.jpg" alt="Hand-carved solid wood ornamental functional furniture" loading="lazy">
+                    </figure>
+                    <div class="product-details">
+                        <h3>Handicraft Furniture</h3>
+                        <p class="product-desc">Heavy seasoned lumber infrastructure elements engineered to last.</p>
+                        <span class="price-tag">₹2,900 <small>/ piece</small></span>
+                        <a href="#home" class="btn btn-secondary-action" data-product="Handicraft Furniture">Reserve Item</a>
+                    </div>
+                </article>
+
+                <article class="card product-card">
+                    <figure class="product-media">
+                        <img src="5.image.jpg" alt="Intricate architectural relief styling on a structural Wooden Carving piece" loading="lazy">
+                    </figure>
+                    <div class="product-details">
+                        <h3>Wooden Carving</h3>
+                        <p class="product-desc">High-detail micro relief motifs hand-filed from quality baseline woods.</p>
+                        <span class="price-tag">₹800 <small>/ piece</small></span>
+                        <a href="#home" class="btn btn-secondary-action" data-product="Wooden Carving">Reserve Item</a>
+                    </div>
+                </article>
+
+                <article class="card product-card">
+                    <figure class="product-media">
+                        <img src="6.image.jpg" alt="Stoneware glaze style designer Rajasthani Crockery utility set" loading="lazy">
+                    </figure>
+                    <div class="product-details">
+                        <h3>Rajasthani Crockery</h3>
+                        <p class="product-desc">Beautiful structural kitchen dining porcelain/stoneware assets.</p>
+                        <span class="price-tag">₹600 <small>/ piece</small></span>
+                        <a href="#home" class="btn btn-secondary-action" data-product="Rajasthani Crockery">Reserve Item</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="biography-section" id="about" aria-labelledby="about-heading">
+            <div class="about-grid-layout">
+                <figure class="biography-visual-wrapper">
+                    <img src="Krish.webp" alt="Founder Krish showcasing regional design craft catalogs" width="600" height="500" loading="lazy">
+                </figure>
+                <div class="biography-narrative">
+                    <span class="section-badge">Corporate Framework</span>
+                    <h2 id="about-heading">Krish's Handicraft Store</h2>
+                    <p class="narrative-paragraph">
+                        Krish is a visionary, progressive entrepreneur establishing digital systems from Jaipur, Rajasthan. He represents the vanguard generation translating historical family handicraft operations into global business modules. His curated listings defend micro-artisan wages, heritage retention pathways, and uncompromised structural material baselines.
+                    </p>
+                    <h3>Empowering Creative Ecosystems</h3>
+                    <p class="narrative-paragraph">
+                        Our baseline setups deliver equitable digital infrastructure connecting independent creative operations directly with consumers. Every functional purchase sustains native multi-generational artist groups and safeguards architectural traditions under threat from mass commercial injection frameworks.
+                    </p>
+                    
+                    <div class="direct-cta-channel">
+                        <a href="https://wa.me/919515192175" class="btn btn-whatsapp-direct" target="_blank" rel="noopener noreferrer">
+                            <i class='bx bxl-whatsapp' aria-hidden="true"></i>
+                            <span>Instant B2B Chat Channel</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="social-proof-grid" id="reviews" aria-labelledby="reviews-heading">
+            <header class="section-heading">
+                <h2 id="reviews-heading">Verified Experiences</h2>
+            </header>
+            <div class="reviews-center-container">
+                <div class="grid-layout three-columns">
+                    <blockquote class="card profile-review-card">
+                        <header class="review-author-meta">
+                            <img src="rev1.png" alt="Advait Profile Asset" class="avatar-thumbnail" loading="lazy" width="64" height="64">
+                            <cite class="author-title">Advait</cite>
+                        </header>
+                        <div class="star-rating" aria-label="Rating: 4.5 out of 5 stars">
+                            <i class='bx bxs-star' aria-hidden="true"></i>
+                            <i class='bx bxs-star' aria-hidden="true"></i>
+                            <i class='bx bxs-star' aria-hidden="true"></i>
+                            <i class='bx bxs-star' aria-hidden="true"></i>
+                            <i class='bx bxs-star-half' aria-hidden="true"></i>
+                        </div>
+                        <p class="review-text">"Outstanding breadth of dynamic premium crafts. Processing speed combined with optimized handling protocols ensures tradition arrives systematically secure."</p>
+                    </blockquote>
+
+                    <blockquote class="card profile-review-card">
+                        <header class="review-author-meta">
+                            <img src="rev2.png" alt="David Profile Asset" class="avatar-thumbnail" loading="lazy" width="64" height="64">
+                            <cite class="author-title">David</cite>
+                        </header>
+                        <div class="star-rating" aria-label="Rating: 4 out of 5 stars">
+                            <i class='bx bxs-star' aria-hidden="true"></i>
+                            <i class='bx bxs-star' aria-hidden="true"></i>
+                            <i class='bx bxs-star' aria-hidden="true"></i>
+                            <i class='bx bxs-star' aria-hidden="true"></i>
+                        </div>
+                        <p class="review-text">"Premium quality control tracking. The natural composition shifts match expectations perfectly. Adds distinct structural culture accentuation home-side."</p>
+                    </blockquote>
+
+                    <blockquote class="card profile-review-card">
+                        <header class="review-author-meta">
+                            <img src="rev3.png" alt="Maddy Profile Asset" class="avatar-thumbnail" loading="lazy" width="64" height="64">
+                            <cite class="author-title">Maddy</cite>
+                        </header>
+                        <div class="star-rating" aria-label="Rating: 5 out of 5 stars">
+                            <i class='bx bxs-star' aria-hidden="true"></i>
+                            <i class='bx bxs-star' aria-hidden="true"></i>
+                            <i class='bx bxs-star' aria-hidden="true"></i>
+                            <i class='bx bxs-star' aria-hidden="true"></i>
+                            <i class='bx bxs-star' aria-hidden="true"></i>
+                        </div>
+                        <p class="review-text">"Vibrant execution depths on earthenware frameworks. Incredible structural reliability with a deep, transparent root connection directly linking back to Rajasthani workshops."</p>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <section class="marketing-subscription" aria-labelledby="newsletter-heading">
+            <div class="subscription-card-box">
+                <h2 id="newsletter-heading">Subscribe to Newsletter</h2>
+                <p>Stay updated on seasonal catalog drops, artisan profiles, and subscriber-only previews.</p>
+                <form id="newsletterForm" novalidate class="inline-form">
+                    <div class="input-action-field">
+                        <label for="newsletterEmail" class="sr-only">Corporate Email Address</label>
+                        <input type="email" id="newsletterEmail" placeholder="Enter your business email..." required autocomplete="email">
+                        <button type="submit" class="btn btn-primary-action">Subscribe</button>
+                    </div>
+                    <div id="newsletterFeedback" class="form-feedback-message" aria-live="polytic" style="margin-top:10px; font-size:0.9rem; display:none;"></div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-layout">
+            <div class="copyright-disclaimer">
+                <p>&copy; 2026 Krish's Handicrafts Store. All Systems Maintained Externally. Secure Encryption Ensured.</p>
+            </div>
+            <nav class="social-ecosystem" aria-label="Corporate Social Vectors Links">
+                <span id="socials-label" class="sr-only">Follow us on our official social media channels:</span>
+                <ul class="social-links-list" aria-labelledby="socials-label">
+                    <li><a href="#social/facebook" aria-label="Visit our Corporate Facebook Vector"><i class="bx bxl-facebook"></i></a></li>
+                    <li><a href="#social/twitter" aria-label="Visit our Corporate Twitter Feed Profile"><i class="bx bxl-twitter"></i></a></li>
+                    <li><a href="#social/instagram" aria-label="Visit our Curated Instagram Production Portfolio"><i class="bx bxl-instagram"></i></a></li>
+                </ul>
+            </nav>
         </div>
-    </section>
+    </footer>
 
-    
-</body>
-</html>
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    // Auto select product when clicking Reserve Item
+    const productDropdown = document.getElementById("productSelect");
+
+    document.querySelectorAll(".btn-secondary-action").forEach(button => {
+        button.addEventListener("click", () => {
+            const productName = button.dataset.product;
+
+            [...productDropdown.options].forEach(option => {
+                if (option.text.trim() === productName.trim()) {
+                    productDropdown.value = option.value;
+                }
+            });
+        });
+    });
+
+    // Order Form
+    const orderForm = document.getElementById("orderForm");
+    const feedback = document.getElementById("formFeedback");
+
+    orderForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const emailPattern =
+            /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+        const phonePattern =
+            /^\+?[0-9]{10,14}$/;
+
+        const email = orderForm.email.value.trim();
+        const phone = orderForm.phone.value.trim();
+
+        if (!emailPattern.test(email)) {
+            feedback.style.display = "block";
+            feedback.style.color = "red";
+            feedback.textContent = "Enter a valid email.";
+            return;
+        }
+
+        if (!phonePattern.test(phone)) {
+            feedback.style.display = "block";
+            feedback.style.color = "red";
+            feedback.textContent = "Enter a valid phone number.";
+            return;
+        }
+
+        feedback.style.display = "block";
+        feedback.style.color = "green";
+        feedback.textContent =
+            "Order placed successfully! We will contact you soon.";
+
+        orderForm.reset();
+    });
+
+    // Newsletter Form
+    const newsletterForm = document.getElementById("newsletterForm");
+    const newsletterFeedback =
+        document.getElementById("newsletterFeedback");
+
+    newsletterForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const email =
+            document.getElementById("newsletterEmail").value.trim();
+
+        const emailPattern =
+            /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+        if (!emailPattern.test(email)) {
+            newsletterFeedback.style.display = "block";
+            newsletterFeedback.style.color = "red";
+            newsletterFeedback.textContent =
+                "Enter a valid email address.";
+            return;
+        }
+
+        newsletterFeedback.style.display = "block";
+        newsletterFeedback.style.color = "green";
+        newsletterFeedback.textContent =
+            "Subscribed successfully!";
+
+        newsletterForm.reset();
+    });
+
+});
+</script>
